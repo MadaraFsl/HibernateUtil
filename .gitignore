@@ -19,6 +19,7 @@ HELP.md
 *.iws
 *.iml
 *.ipr
+*.class
 
 ### target
 **/target
