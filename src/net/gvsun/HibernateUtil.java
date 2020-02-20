@@ -8,14 +8,12 @@ import java.util.List;
 
 public class HibernateUtil {
 
-    /**************************************************************************
-     * @Description 通用将Hibernate转换为对应VO类方法
+    /**
+     * 通用将Hibernate转换为对应VO类方法
      * 使用时注意：VO类中属性必须和对象sql查询结果集顺序一致，且类型必须对应。
+     *
      * @author 付世亮
-     * @param objects 需要转换的list
-     * @param T 将要转换的vo对象类型(xxxVo.class)
-     **************************************************************************/
-
+     */
     public static List transferObjectsToList(List<Object[]> objects, Class T) {
         List list = new ArrayList<>();
         for (Object[] os : objects) {
