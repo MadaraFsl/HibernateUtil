@@ -21,7 +21,7 @@ public class HibernateUtil {
             try {
                 o = T.newInstance();
                 Field[] fields = T.getDeclaredFields();
-                for (int j = 0; j < objects.size(); j++) {
+                for (int j = 0; j < os.length; j++) {
                     if (os[j] != null) {
                         fields[j].setAccessible(true);
                         try {
@@ -33,6 +33,10 @@ public class HibernateUtil {
                             if (os[j] instanceof Boolean) {
                                 Boolean aBoolean = (Boolean) os[j];
                                 os[j] = aBoolean ? "1" : "0";
+                            }
+                            if (os[j] instanceof java.sql.Date) {
+                                java.sql.Date sqlDate = (java.sql.Date) os[j];
+                                os[j] = os[j].toString();
                             }
                             fields[j].set(o, os[j]);
                         } catch (IllegalAccessException e) {
