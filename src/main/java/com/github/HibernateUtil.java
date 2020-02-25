@@ -1,4 +1,4 @@
-package net.gvsun;
+package com.github;
 
 import java.lang.reflect.Field;
 import java.sql.Timestamp;
