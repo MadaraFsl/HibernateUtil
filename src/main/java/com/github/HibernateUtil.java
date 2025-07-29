@@ -12,7 +12,6 @@ public class HibernateUtil {
      * 通用将Hibernate转换为对应VO类方法
      * 使用时注意：VO类中属性必须和对象sql查询结果集顺序一致，且类型必须对应。
      *
-     * @author 付世亮
      */
     public static List transferObjectsToList(List<Object[]> objects, Class T) {
         List list = new ArrayList<>();
